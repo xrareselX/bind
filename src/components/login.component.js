@@ -29,6 +29,8 @@ function Login(props) {
         })
     }
     return(
+       <div className="auth-wrapper">
+            <div className="auth-inner">
         <form onSubmit={handleSubmit}>
         <h3>Sign In</h3>
         <div className="mb-3">
@@ -70,6 +72,8 @@ function Login(props) {
            <a href="/sign-up">Sign up</a>
         </p>
       </form>
+       </div>
+          </div>
     );
 }
 export default Login;

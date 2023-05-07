@@ -79,7 +79,7 @@ function AdminHome(props){
             </table>
             Name<h1>{props.userDetails.fname}</h1>
             Email<h1>{props.userDetails.email}</h1><br/>
-            <button className="btn btn-primary" onClick={logout}>Log Out</button>
+            {/* <button className="btn btn-primary" onClick={logout}>Log Out</button> */}
         </div>
     );
 }
