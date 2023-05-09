@@ -2,7 +2,7 @@ import { faBriefcase, faChartSimple, faEnvelope, faFile, faGlobe, faTrash } from
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"; 
-import createZoneModal from "./createZoneModal";
+import CreateZoneModal from "./createZoneModal";
 
 function EditUser(props){
 
@@ -11,6 +11,9 @@ function EditUser(props){
     const [allDns, setAllDns] = useState([]);
     const params = useParams();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const closeModalHandle = () => {
+        setIsModalOpen(false);
+    }
     useEffect(() =>{
         console.log("params:", params);
         fetch("http://localhost:5000/getUser", {
@@ -292,9 +295,9 @@ function EditUser(props){
                                         <a href="javascript: void(0);" onclick="insideCloudPage('dashboard-zones', 'main', '&amp;show=zones');" className="showZonesTitle">Zones</a>
                                     </div>
                                     <div className="zones-table-buttons">
-                                        <createZoneModal isOpen={isModalOpen} onClose={()=>setIsModalOpen(false)}>
+                                        <CreateZoneModal isOpen={isModalOpen} onClose={closeModalHandle}/>
                                             {/* sdafgsdfsa */}
-                                            </createZoneModal>
+                                            {/* </createZoneModal> */}
                                         <button className="round-btn xs-btn color-btn" onClick={()=> setIsModalOpen(true)}>create zone</button>
                                         <button className="round-btn xs-btn x-bright3-btn available-nameservers-button" onclick="showPopup('main', '&amp;show=availableNameServers')">available name servers</button>
                                         <button className="round-btn xs-btn x-bright3-btn available-nameservers-button" onclick="location.href='/subscription/#zoneBackups';">backups</button>
@@ -321,7 +324,14 @@ function EditUser(props){
                                 <th><FontAwesomeIcon icon={faTrash} onClick={()=>deleteDns(dns._id, dns.dnsName)}/></th>
                             </tr>
                         )
-                    })}
+                    })} 
+                    {!allDns && (
+                        <tr>
+                            <td className="italic dynColspan" colSpan={5}>
+                            Currently you don't have any registered DNS zones.
+                            </td>
+                        </tr>
+                    )}
                             </tbody>
                         </table>
                     </div>

@@ -29,8 +29,10 @@ function App() {
                 <Route path="/sign-up" element={<SignUp />} />
                 <Route path="/userDetails" element={<UserDetails />} />
                 <Route path="/reset" element={<Reset />} />
-                <Route path="/edit-user/:id" element={<EditUser />} />
-                <Route path="/edit-dns/:id" element={<EditDns />} />
+                {/* <Route path="/edit-user/:id" element={<EditUser />} /> */}
+                <Route path="/edit-user/:id" element={isLoggedIn=="true" ? <EditUser/>  :<Login />} />
+                {/* <Route path="/edit-dns/:id" element={<EditDns />} /> */}
+                <Route path="/edit-dns/:id" element={isLoggedIn=="true" ? <EditDns/>  :<Login/>} />
               </Routes>
             {/* </div>
           </div> */}

@@ -234,9 +234,10 @@ a, span.a {
 
 /* Modal dialog */
 .modal-dialog {
-  position: relative;
-  max-width: 600px;
-  width: 90%;
+  position: absolute;
+  top: 10%;
+  max-width: 700px;
+  width: 100%;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -245,6 +246,7 @@ a, span.a {
 /* Modal content */
 .modal-content {
   padding: 20px;
+  position: relative;
 }
 
 /* Modal header */
@@ -252,28 +254,72 @@ a, span.a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
-}
-
-/* Modal title */
-.modal-title {
-  margin: 0;
-  font-size: 1.2rem;
+  /* padding: 10px 20px; */
+  padding: 0;
+  border-bottom: 0;
 }
 
 /* Close button */
 .btn-close {
   padding: 0;
   margin: 0;
-  background: none;
   border: none;
   font-size: 1.2rem;
   color: #999;
   cursor: pointer;
+  position: absolute;
+  right:-20px;
+  top:-10px;
+  border-radius: 50%;
+  background-color: #fff;
+  width: 35px;
+  height: 35px;
+  box-shadow: -1px 1px 2px 0 #a79f9e;
+  opacity: 1;
 }
 
 /* Close button hover */
 .btn-close:hover {
   color: #000;
+}
+.newZoneBox.card-gradient {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 10px;
+  width: 200px;
+  -webkit-box-shadow: 0 2px 0px 0 rgba(72,62,52,.3);
+  box-shadow: 0 2px 0px 0 rgba(72,62,52,.3);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  color: #333;
+  font-family: 'Nunito', sans-serif;
+  display: inline-flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0 10px 20px;
+  white-space: normal;
+}
+.newZoneBox.card-gradient:hover {
+  -webkit-box-shadow: 0 0 0 2px #ff6921 !Important;
+  box-shadow: 0 0 0 2px #ff6921 !Important;
+}
+.card-gradient b{
+  font-size: 0.85em;
+}
+.card-gradient span{
+  font-weight: normal;
+  font-size: 0.7em;
+}
+.new-zone-h2{
+  font-weight: 100;
+  font-size: 1.6em;
+  margin: 0 auto 30px;
+}
+.row-content-mb10 {
+  margin-bottom: 10px;
+}
+form.master-zone label{
+  position: relative;
+  /* margin: 0 30px; */
 }
